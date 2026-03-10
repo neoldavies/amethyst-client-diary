@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700;900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif:
+    "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times,
+    serif;
+
+  --color-amethyst-50: #faf8ff;
+  --color-amethyst-100: #e8d8ff;
+  --color-amethyst-200: #d6b8ff;
+  --color-amethyst-300: #b886ff;
+  --color-amethyst-400: #9a54ff;
+  --color-amethyst-500: #8a3cff;
+  --color-amethyst-600: #7a26f5;
+  --color-amethyst-700: #7329ef;
+  --color-amethyst-800: #5e1dbd;
+  --color-amethyst-900: #4f1da4;
+  --color-amethyst-950: #2d1060;
+  --color-amethyst-deep: #0f0a1f;
+}
+
+@layer base {
+  :root {
+    --bg-color: var(--color-amethyst-50);
+    --bg-gradient: radial-gradient(ellipse 90% 45% at 50% -5%, var(--color-amethyst-100) 0%, var(--color-amethyst-50) 65%);
+    --text-primary: #0f172a;
+    --text-secondary: var(--color-amethyst-800);
+    --text-muted: var(--color-amethyst-600);
+    --card-bg: rgba(255, 255, 255, 0.7);
+    --card-border: rgba(115, 41, 239, 0.1);
+    --card-border-hover: rgba(115, 41, 239, 0.3);
+    --header-bg: var(--color-amethyst-900);
+    --header-text: #ffffff;
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    --nav-border: rgba(115, 41, 239, 0.1);
+    --nav-text: var(--color-amethyst-400);
+    --nav-text-active: var(--color-amethyst-700);
+    --input-bg: rgba(255, 255, 255, 0.8);
+    --btn-primary-bg: var(--color-amethyst-700);
+    --btn-primary-text: #ffffff;
+    --btn-primary-hover: var(--color-amethyst-800);
+  }
+
+  .dark {
+    --bg-color: var(--color-amethyst-deep);
+    --bg-gradient: radial-gradient(ellipse 90% 45% at 50% -5%, var(--color-amethyst-950) 0%, var(--color-amethyst-deep) 65%);
+    --text-primary: var(--color-amethyst-50);
+    --text-secondary: var(--color-amethyst-200);
+    --text-muted: var(--color-amethyst-400);
+    --card-bg: rgba(45, 16, 96, 0.3);
+    --card-border: rgba(115, 41, 239, 0.2);
+    --card-border-hover: rgba(115, 41, 239, 0.5);
+    --header-bg: var(--color-amethyst-deep);
+    --header-text: var(--color-amethyst-50);
+    --nav-bg: rgba(15, 10, 31, 0.9);
+    --nav-border: rgba(115, 41, 239, 0.2);
+    --nav-text: var(--color-amethyst-400);
+    --nav-text-active: var(--color-amethyst-300);
+    --input-bg: rgba(45, 16, 96, 0.4);
+    --btn-primary-bg: var(--color-amethyst-700);
+    --btn-primary-text: #ffffff;
+    --btn-primary-hover: var(--color-amethyst-600);
+  }
+
+  body {
+    background-color: var(--bg-color);
+    background-image: var(--bg-gradient);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+@layer components {
+  .glass-card {
+    background-color: var(--card-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--card-border);
+    border-radius: 1rem;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .glass-card:hover {
+    border-color: var(--card-border-hover);
+  }
+
+  .btn-primary {
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    border-radius: 9999px;
+    padding: 0.625rem 1.5rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--btn-primary-hover);
+  }
+  
+  .btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

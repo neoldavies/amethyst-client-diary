@@ -1,0 +1,21 @@
+{
+  "name": "Amethyst Client Diary",
+  "short_name": "Amethyst",
+  "description": "A private, offline-first client diary and companion app for Amethyst Nails & Beauty.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#2D1B33",
+  "theme_color": "#2D1B33",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
